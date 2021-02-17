@@ -24,6 +24,7 @@ function App() {
           placeholder="email address"
           onChange={(event) => setEmail(event.target.value)}
         />
+
         <label htmlFor="password">Password</label>
         <input
           type="password"
@@ -34,6 +35,7 @@ function App() {
       </form>
       <button
         onClick={() => {
+          setAuthenticated(false);
           axios.post("http://localhost:8080/", { user: email, password }).then(
             (res) => {
               console.log("response from server is: ", res.data);
