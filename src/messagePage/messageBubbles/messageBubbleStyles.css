@@ -1,0 +1,22 @@
+.alignRight {
+  width: auto;
+  text-align: right;
+}
+
+.messageBubble {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+  display: inline-block;
+  text-align: left;
+  max-width: 300px;
+}
+
+#user {
+  background-color: green;
+}
+
+#other {
+  background-color: grey;
+}

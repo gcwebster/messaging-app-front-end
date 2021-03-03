@@ -1,0 +1,19 @@
+#writeMessageRow {
+  background-color: lightgrey;
+  height: 15%;
+  display: flex;
+}
+
+#writeMessageRow input {
+  height: 100%;
+  width: 80%;
+  border: 1px solid black;
+}
+
+#writeMessageRow button {
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
+  box-shadow: none;
+  background-color: green;
+}
