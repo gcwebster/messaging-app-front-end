@@ -8,7 +8,7 @@ const MessageBubbles = ({ messages, user }) => {
       {messages.map((message) => {
         const sender = message.sender === user;
         return (
-          <div className={sender ? "alignRight" : ""}>
+          <div className={sender ? "alignRight" : ""} key={message.text}>
             <p className="messageBubble" id={sender ? "user" : "other"}>
               {message.text}
             </p>
