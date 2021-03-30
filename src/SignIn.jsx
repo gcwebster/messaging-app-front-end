@@ -40,7 +40,6 @@ const SignIn = ({ setAuthenticated, setUser }) => {
             .then(
               (res) => {
                 const { data } = res;
-                console.log("response from server is: ", data);
                 setAuthenticated(data.authenticated);
                 setUser(data.user);
               },

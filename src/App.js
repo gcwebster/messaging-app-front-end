@@ -20,7 +20,9 @@ function App() {
       {!authenticated && (
         <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />
       )}
-      {authenticated && <MessagePage user={user} messages={messages} />}
+      {authenticated && messages && (
+        <MessagePage user={user} messages={messages} />
+      )}
     </>
   );
 }
