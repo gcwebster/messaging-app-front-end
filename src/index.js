@@ -1,12 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
+import App from "./App";
+import MessagePage from "./messagePage";
+
+const routing = () => (
+  <Router>
+    <Switch>
+      <Route path="/">
+        <App />
+      </Route>
+      <Route path="/messages">
+        <MessagePage />
+      </Route>
+    </Switch>
+  </Router>
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>{routing()}</React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
