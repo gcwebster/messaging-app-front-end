@@ -9,4 +9,13 @@
 .signInOption {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.SignInPage button {
+  color: white;
+  background-color: rgb(4, 178, 246);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
 }
