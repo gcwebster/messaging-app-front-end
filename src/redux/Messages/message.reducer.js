@@ -1,4 +1,4 @@
-import { SAVE_MESSAGES } from "./message.types";
+import { SAVE_MESSAGES, SET_USER } from "./message.types";
 
 const INITIAL_STATE = {
   messages: [],
@@ -10,6 +10,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         messages: action.payload,
+      };
+
+    case SET_USER:
+      return {
+        ...state,
+        user: action.payload,
       };
 
     default:
