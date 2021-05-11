@@ -7,26 +7,23 @@ import Footer from "./footer";
 
 import "./messagePageStyles.css";
 
-const MessagePage = (props, user = "George") => (
+const MessagePage = (props) => (
   <div id="container">
-    {/* <div id="messagingAppContainer">
-      <TitleRow user={user} />
+    <div id="messagingAppContainer">
+      <TitleRow user={props.user} />
       <div id="messagingBody">
-        <MessageBubbles messages={props.messages} user={user} />
+        <MessageBubbles messages={props.messages} user={props.user} />
       </div>
       <Footer />
-    </div> */}
-
-    <h1>YOU'RE IN MESSAGES</h1>
+    </div>
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    count: state.counter.count,
-    messages: state.messages.messages,
-  };
-};
+const mapStateToProps = (state) => ({
+  count: state.counter.count,
+  messages: state.messages.messages,
+  user: state.messages.user,
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {};

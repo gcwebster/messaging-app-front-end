@@ -6,15 +6,6 @@ const SignIn = ({ setAuthenticated, setUser }) => {
   const [password, setPassword] = useState();
   return (
     <div className="App">
-      <button
-        onClick={() =>
-          axios
-            .get("http://localhost:8080/users")
-            .then((res) => console.log("response from request: ", res.data))
-        }
-      >
-        Test GET
-      </button>
       <form>
         <label htmlFor="email">Email</label>
         <input
@@ -48,7 +39,7 @@ const SignIn = ({ setAuthenticated, setUser }) => {
             );
         }}
       >
-        Test POST
+        Sign in
       </button>
     </div>
   );
