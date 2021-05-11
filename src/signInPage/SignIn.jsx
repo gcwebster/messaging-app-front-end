@@ -1,27 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import "./signIn.css";
+
 const SignIn = ({ setAuthenticated, setUser }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   return (
-    <div className="App">
+    <div className="SignInPage">
       <form>
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          name="email"
-          placeholder="email address"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
+        <div className="signInOption">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email address"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
+        <div className="signInOption">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
       </form>
       <button
         onClick={() => {

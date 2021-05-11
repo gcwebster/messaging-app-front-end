@@ -1,0 +1,12 @@
+.SignInPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.signInOption {
+  display: flex;
+  justify-content: space-between;
+}
