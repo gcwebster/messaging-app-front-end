@@ -11,11 +11,11 @@ import MessagePage from "./messagePage";
 const routing = () => (
   <Router>
     <Switch>
-      <Route path="/">
-        <App />
-      </Route>
       <Route path="/messages">
         <MessagePage />
+      </Route>
+      <Route path="/">
+        <App />
       </Route>
     </Switch>
   </Router>
