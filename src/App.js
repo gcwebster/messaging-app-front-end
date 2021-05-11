@@ -29,28 +29,7 @@ function App(props) {
     }
   }, [user]);
 
-  return (
-    <>
-      <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />
-
-      <button onClick={() => setShowRedux(!showRedux)}>
-        {showRedux ? "Hide " : "Show "} Redux counter?
-      </button>
-      {showRedux && (
-        <>
-          <div>Count: {props.count}</div>
-
-          <button onClick={() => props.increaseCounter()}>
-            Increase Count
-          </button>
-
-          <button onClick={() => props.decreaseCounter()}>
-            Decrease Count
-          </button>
-        </>
-      )}
-    </>
-  );
+  return <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />;
 }
 
 const mapStateToProps = (state) => ({
