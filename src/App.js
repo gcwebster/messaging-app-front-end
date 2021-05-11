@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
-import SignIn from "./SignIn.jsx";
+import SignIn from "./signInPage/SignIn.jsx";
 
 import {
   increaseCounter,
