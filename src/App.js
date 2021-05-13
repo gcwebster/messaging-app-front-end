@@ -16,7 +16,6 @@ function App(props) {
   const history = useHistory();
   const [authenticated, setAuthenticated] = useState();
   const [user, setUser] = useState();
-  const [showRedux, setShowRedux] = useState();
 
   useEffect(() => {
     if (user !== undefined) {
@@ -29,7 +28,13 @@ function App(props) {
     }
   }, [user]);
 
-  return <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />;
+  return (
+    <SignIn
+      setAuthenticated={setAuthenticated}
+      setUser={setUser}
+      authenticated={authenticated}
+    />
+  );
 }
 
 const mapStateToProps = (state) => ({
