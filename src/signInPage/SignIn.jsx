@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { signIn, register } from "./helper";
 
 import "./signIn.css";
 
 const SignIn = ({ setAuthenticated, setUser, authenticated }) => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
   const [emailOrPasswordMissing, setEmailOrPasswordMissing] = useState(false);
+  const [error, setError] = useState(null);
   return (
     <div className="SignInPage">
       <form>
@@ -31,29 +32,32 @@ const SignIn = ({ setAuthenticated, setUser, authenticated }) => {
         {emailOrPasswordMissing && (
           <p>Make sure you enter BOTH your email and password</p>
         )}
-        {authenticated === false && <p>Error, user isn't present</p>}
+        {error && <p>{error}</p>}
       </form>
       <button
         onClick={() => {
           setAuthenticated(undefined);
           if (email && password) {
             setEmailOrPasswordMissing(false);
-            axios
-              .post("http://localhost:8080/users", { user: email, password })
-              .then(
-                (res) => {
-                  const { data } = res;
-                  setAuthenticated(data.authenticated);
-                  setUser(data.user);
-                },
-                (err) => console.error("error in post call: ", err)
-              );
+            signIn(email, password, setAuthenticated, setUser, setError);
           } else {
             setEmailOrPasswordMissing(true);
           }
         }}
       >
         Sign in
+      </button>
+      <button
+        onClick={() => {
+          if (email && password) {
+            setEmailOrPasswordMissing(false);
+            register(email, password, setAuthenticated, setUser, setError);
+          } else {
+            setEmailOrPasswordMissing(true);
+          }
+        }}
+      >
+        Register
       </button>
     </div>
   );
