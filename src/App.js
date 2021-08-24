@@ -28,13 +28,7 @@ function App(props) {
     }
   }, [user]);
 
-  return (
-    <SignIn
-      setAuthenticated={setAuthenticated}
-      setUser={setUser}
-      authenticated={authenticated}
-    />
-  );
+  return <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />;
 }
 
 const mapStateToProps = (state) => ({

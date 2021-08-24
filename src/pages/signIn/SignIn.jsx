@@ -3,7 +3,7 @@ import { signIn, register } from "./helper";
 
 import "./signIn.css";
 
-const SignIn = ({ setAuthenticated, setUser, authenticated }) => {
+const SignIn = ({ setAuthenticated, setUser }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [emailOrPasswordMissing, setEmailOrPasswordMissing] = useState(false);
