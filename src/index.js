@@ -7,12 +7,16 @@ import store from "./redux/store";
 
 import App from "./App";
 import MessagePage from "./pages/message";
+import RegisterPage from "./pages/register";
 
 const routing = () => (
   <Router>
     <Switch>
       <Route path="/messages">
         <MessagePage />
+      </Route>
+      <Route path="/register">
+        <RegisterPage />
       </Route>
       <Route path="/">
         <App />

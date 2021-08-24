@@ -1,0 +1,21 @@
+.registerPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.registrationInput {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.registerPage button {
+  color: white;
+  background-color: rgb(4, 178, 246);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+}
