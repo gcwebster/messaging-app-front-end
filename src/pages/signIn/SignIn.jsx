@@ -37,24 +37,28 @@ const SignIn = ({ setAuthenticated, setUser, authenticated }) => {
       <button
         onClick={() => {
           setAuthenticated(undefined);
-          if (email && password) {
-            setEmailOrPasswordMissing(false);
-            signIn(email, password, setAuthenticated, setUser, setError);
-          } else {
-            setEmailOrPasswordMissing(true);
-          }
+          signIn(
+            email,
+            password,
+            setAuthenticated,
+            setUser,
+            setError,
+            setEmailOrPasswordMissing
+          );
         }}
       >
         Sign in
       </button>
       <button
         onClick={() => {
-          if (email && password) {
-            setEmailOrPasswordMissing(false);
-            register(email, password, setAuthenticated, setUser, setError);
-          } else {
-            setEmailOrPasswordMissing(true);
-          }
+          register(
+            email,
+            password,
+            setAuthenticated,
+            setUser,
+            setError,
+            setEmailOrPasswordMissing
+          );
         }}
       >
         Register
