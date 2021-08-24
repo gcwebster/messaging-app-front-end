@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signIn, register } from "./helper";
+import { signIn } from "./helper";
 
 import "./signIn.css";
 
@@ -51,14 +51,7 @@ const SignIn = ({ setAuthenticated, setUser }) => {
       </button>
       <button
         onClick={() => {
-          register(
-            email,
-            password,
-            setAuthenticated,
-            setUser,
-            setError,
-            setEmailOrPasswordMissing
-          );
+          console.log("go to /register");
         }}
       >
         Register

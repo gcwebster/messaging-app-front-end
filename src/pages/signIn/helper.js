@@ -23,32 +23,3 @@ export const signIn = async (
     setEmailOrPasswordMissing(true);
   }
 };
-
-export const register = async (
-  email,
-  password,
-  setAuthenticated,
-  setUser,
-  setError,
-  setEmailOrPasswordMissing
-) => {
-  if (email && password) {
-    setEmailOrPasswordMissing(false);
-    axios
-      .post("http://localhost:8080/users/register", {
-        email,
-        password,
-      })
-      .then(
-        (res) => {
-          const { data } = res;
-          setAuthenticated(data.authenticated);
-          setUser(data.user);
-          setError(res.data.error);
-        },
-        (err) => console.error("error in post call: ", err)
-      );
-  } else {
-    setEmailOrPasswordMissing(true);
-  }
-};
