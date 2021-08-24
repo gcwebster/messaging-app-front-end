@@ -1,6 +1,8 @@
 import React from "react";
-import Input from "../../common/Input";
 import { Formik } from "formik";
+
+import Input from "../../common/Input";
+import { register } from "./helper";
 import "./register.css";
 
 const Register = () => (
@@ -15,6 +17,7 @@ const Register = () => (
       }}
       onSubmit={(values) => {
         console.log("submitted with the following: ", values);
+        register(values);
       }}
       validator={() => ({})}
     >
