@@ -12,8 +12,10 @@ const MessagePage = (props) => (
     <div id="messagingAppContainer">
       <TitleRow user={props.user.name} />
       <div id="messagingBody">
-        <MessageBubbles messages={props.messages} userId={props.user.name} />
-        {/* Change user.name to user.email */}
+        <MessageBubbles
+          messages={props.messages[0].messages}
+          userId={props.user.email}
+        />
       </div>
       <Footer />
     </div>
