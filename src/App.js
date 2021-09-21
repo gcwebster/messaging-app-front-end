@@ -22,12 +22,12 @@ function App(props) {
       axios
         .get(`http://localhost:8080/messages?user=${user.email}`)
         .then((res) => {
-          props.saveMessages(res?.data?.messages);
+          props.saveMessages(res?.data);
           props.setUser(user);
           if (authenticated) history.push("/messages");
         });
     }
-  }, [user?.email]);
+  }, [user]);
 
   return <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />;
 }
