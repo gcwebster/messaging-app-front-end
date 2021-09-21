@@ -10,9 +10,10 @@ import "./messagePageStyles.css";
 const MessagePage = (props) => (
   <div id="container">
     <div id="messagingAppContainer">
-      <TitleRow user={props.user} />
+      <TitleRow user={props.user.name} />
       <div id="messagingBody">
-        <MessageBubbles messages={props.messages} user={props.user} />
+        <MessageBubbles messages={props.messages} userId={props.user.name} />
+        {/* Change user.name to user.email */}
       </div>
       <Footer />
     </div>

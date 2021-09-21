@@ -15,18 +15,19 @@ import { saveMessages, setUser } from "./redux/Messages/message.actions";
 function App(props) {
   const history = useHistory();
   const [authenticated, setAuthenticated] = useState();
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
     if (user !== undefined) {
-      axios.get(`http://localhost:8080/messages?user=${user}`).then((res) => {
-        console.log("user is: ", user);
-        props.saveMessages(res?.data?.messages);
-        props.setUser(user);
-        if (authenticated) history.push("/messages");
-      });
+      axios
+        .get(`http://localhost:8080/messages?user=${user.email}`)
+        .then((res) => {
+          props.saveMessages(res?.data?.messages);
+          props.setUser(user);
+          if (authenticated) history.push("/messages");
+        });
     }
-  }, [user]);
+  }, [user?.email]);
 
   return <SignIn setAuthenticated={setAuthenticated} setUser={setUser} />;
 }

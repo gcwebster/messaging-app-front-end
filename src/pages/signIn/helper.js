@@ -14,7 +14,10 @@ export const signIn = async (
       (res) => {
         const { data } = res;
         setAuthenticated(data.authenticated);
-        setUser(data.user);
+        setUser({
+          email,
+          name: data.user,
+        });
         setError(data.error);
       },
       (err) => console.error("error in post call: ", err)

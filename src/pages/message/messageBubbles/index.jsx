@@ -2,11 +2,11 @@ import React from "react";
 
 import "./messageBubbleStyles.css";
 
-const MessageBubbles = ({ messages, user }) => {
+const MessageBubbles = ({ messages, userId }) => {
   return (
     <div>
       {messages.map((message) => {
-        const sender = message.sender === user;
+        const sender = message.sender === userId;
         return (
           <div className={sender ? "alignRight" : ""} key={message.text}>
             <p className="messageBubble" id={sender ? "user" : "other"}>
